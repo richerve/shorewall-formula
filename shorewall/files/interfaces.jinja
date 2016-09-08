@@ -24,7 +24,7 @@
 {%-     if interface_data.ipv is defined and interface_data.ipv != ipv %}{% continue %}{%endif %}
 
 # {{ interface }}
-# {{ interface_data.comment if interface_data.comment is defined else '' }}
+{{ '#'interface_data.comment if interface_data.comment }}
 {{ zone }}  {{ interface }}  {{ interface_data.get('options', '') }}
 {%-   endfor %}
 {%- endfor %}
