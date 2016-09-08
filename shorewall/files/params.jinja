@@ -26,7 +26,7 @@
 ###############################################################################
 
 {%- for params in salt['pillar.get']('shorewall:params', {}) %}
-{# skip if ip version does not match #}
+{#- skip if ip version does not match #}
 {%-   if params.ipv is defined and params.ipv != ipv %}{% continue %}{%endif %}
 
 # {{ params.get('comment', '') }}

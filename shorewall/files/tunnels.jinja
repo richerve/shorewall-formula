@@ -10,7 +10,7 @@
 #TYPE			ZONE	GATEWAY(S)			GATEWAY
 #
 {%- for tunnels in salt['pillar.get']('shorewall:tunnels', {}) %}
-{# skip if ip version does not match #}
+{#- skip if ip version does not match #}
 {%-   if tunnels.ipv is defined and tunnels.ipv != ipv %}{% continue %}{%endif %}
 
 {%- if tunnels is string %}

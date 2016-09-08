@@ -15,7 +15,7 @@
 #SOURCE         DEST            POLICY          LOG LEVEL       LIMIT:BURST
 
 {%- for policy in salt['pillar.get']('shorewall:policy', {}) %}
-{# skip if ip version does not match #}
+{#- skip if ip version does not match #}
 {%-   if policy.ipv is defined and policy.ipv != ipv %}{% continue %}{%endif %}
 
 # {{ policy.get('comment', '') }}

@@ -15,7 +15,7 @@
 #INTERFACE              SOURCE          ADDRESS         PROTO   PORT(S) IPSEC   MARK
 
 {%- for masq in salt['pillar.get']('shorewall:masq', {}) %}
-{# skip if ip version does not match #}
+{#- skip if ip version does not match #}
 {%-   if masq.ipv is defined and masq.ipv != ipv %}{% continue %}{%endif %}
 
 {%- if masq is string %}

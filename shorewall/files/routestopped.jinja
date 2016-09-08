@@ -14,7 +14,7 @@
 ##############################################################################
 #INTERFACE	HOST(S)                  OPTIONS
 {%- for rtsp in salt['pillar.get']('shorewall:routestopped', {}) %}
-{# skip if ip version does not match #}
+{#- skip if ip version does not match #}
 {%-   if rtsp.ipv is defined and rtsp.ipv != ipv %}{% continue %}{%endif %}
 
 # {{ rtsp.get('comment', '') }}

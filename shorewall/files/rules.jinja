@@ -31,9 +31,8 @@ SECTION UNTRACKED
 SECTION NEW
 {%- endif %}
 
-
 {%- for rule in salt['pillar.get']('shorewall:rules', {}) %}
-{# skip if ip version does not match #}
+{#- skip if ip version does not match #}
 {%-   if rule.ipv is defined and rule.ipv != ipv %}{% continue %}{% endif %}
 
 {%-   if rule is string %}
